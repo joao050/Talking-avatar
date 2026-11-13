@@ -1,6 +1,6 @@
 # 📝 Backlog de Tarefas: Avatar Falante com IA
 
-> **Status Global:** Em Planejamento  
+> **Status Global:** Fase 0 Concluída / Em Desenvolvimento (Etapa 1)  
 > **Diretório Raiz:** `C:/Users/ADM/.gemini/antigravity/scratch/projects/avatar-falante`
 
 ---
@@ -18,7 +18,7 @@
 - [x] 🔴 **TASK-001**: Criar estrutura de diretórios (`backend/`, `frontend/`, `docs/`, `models/`, `data/`)
 - [x] 🔴 **TASK-002**: Configurar ambiente virtual Python (`.venv` com Python 3.10 ou 3.11)
 - [x] 🔴 **TASK-003**: Criar `requirements.txt` base (FastAPI, uvicorn, langchain, chromadb, etc.)
-- [ ] 🟡 **TASK-004**: Criar arquivo `.env.example` para configurações locais
+- [x] 🟡 **TASK-004**: Criar arquivo `.env.example` para configurações locais
 
 ---
 
