@@ -22,3 +22,11 @@ Imediatamente após criar ou modificar qualquer código ou arquivo:
 ## 4. Prontidão para Versionamento (GitHub)
 - O código deste projeto será disponibilizado em um repositório no GitHub.
 - Manter o repositório limpo, com código modular, commits organizados e exclusão rigorosa de dados voláteis, arquivos pesados e caches (`.venv/`, `models/`, `data/vector_store/`, `__pycache__/`, `.env`) via `.gitignore`.
+
+## 5. Fluxo de Git (Branches, Commits, Push e Pull)
+- **Atualização Prévia (`git pull`):** Antes de iniciar qualquer nova tarefa, voltar para a branch `main` e executar `git pull origin main` para sincronizar os merges recentes do GitHub.
+- **Branch por Tarefa:** Criar uma branch dedicada para cada task antes de criar ou modificar arquivos, nomeada com o código e descrição da tarefa (ex: `task-001/estrutura-diretorios`).
+- **Comentários de Commit com o Usuário:** Antes de registrar commits, consultar o usuário sobre qual mensagem/comentário deve ser utilizado (ou sugerir e aguardar confirmação/edição).
+- **Push sob Confirmação:** O comando `git push` para o GitHub só será executado após a confirmação explícita do usuário.
+- **Pull Request e Merge Manual:** O Pull Request no GitHub será revisado e mergado na `main` manualmente pelo usuário.
+
