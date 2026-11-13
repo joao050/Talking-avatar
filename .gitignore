@@ -16,7 +16,10 @@ __pycache__/
 htmlcov/
 
 # Modelos locais e pesos pesados (Whisper, Piper, Ollama)
-models/
+models/**
+!models/
+!models/**/
+!models/**/.gitkeep
 *.onnx
 *.onnx.json
 *.bin
@@ -26,7 +29,10 @@ models/
 *.gguf
 
 # Banco vetorial e base de conhecimento local
-data/vector_store/
+data/vector_store/**
+!data/vector_store/
+!data/vector_store/**/
+!data/vector_store/**/.gitkeep
 *.sqlite3
 
 # Arquivos de dados brutos
