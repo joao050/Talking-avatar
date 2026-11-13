@@ -1,0 +1,58 @@
+# Ambientes virtuais Python
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python cache & compilação
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Modelos locais e pesos pesados (Whisper, Piper, Ollama)
+models/
+*.onnx
+*.onnx.json
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.gguf
+
+# Banco vetorial e base de conhecimento local
+data/vector_store/
+*.sqlite3
+
+# Arquivos de dados brutos
+data/documents/*
+!data/documents/.gitkeep
+
+# Variáveis de ambiente e segredos
+.env
+.env.local
+.env.*.local
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs e arquivos temporários
+*.log
+tmp/
+temp/
+
+# IDEs e Sistema Operacional
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
