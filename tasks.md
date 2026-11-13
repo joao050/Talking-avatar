@@ -16,7 +16,7 @@
 ## 🛠️ Fase 0: Setup Inicial do Projeto
 - [x] 🔴 **TASK-000**: Inicializar repositório Git, .gitignore e vincular remoto no GitHub
 - [x] 🔴 **TASK-001**: Criar estrutura de diretórios (`backend/`, `frontend/`, `docs/`, `models/`, `data/`)
-- [ ] 🔴 **TASK-002**: Configurar ambiente virtual Python (`.venv` com Python 3.10 ou 3.11)
+- [x] 🔴 **TASK-002**: Configurar ambiente virtual Python (`.venv` com Python 3.10 ou 3.11)
 - [ ] 🔴 **TASK-003**: Criar `requirements.txt` base (FastAPI, uvicorn, langchain, chromadb, etc.)
 - [ ] 🟡 **TASK-004**: Criar arquivo `.env.example` para configurações locais
 
