@@ -1,0 +1,2 @@
+# Atalho para instalação das dependências do backend
+-r backend/requirements.txt
