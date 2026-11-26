@@ -37,6 +37,7 @@ avatar-falante/
 │   │   └── tts.py                 # Piper TTS (geração de áudio streaming pt-BR)
 │   │
 │   └── tests/                     # Testes de integração e benchmarks de latência
+│       └── check_ollama.py        # Diagnóstico local e smoke test do Ollama (4GB RAM)
 │
 ├── frontend/                      # Interface Web do Avatar 3D
 │   ├── index.html                 # Página principal
@@ -150,8 +151,8 @@ sequenceDiagram
 
 | Camada | Tecnologia | Justificativa |
 | :--- | :--- | :--- |
-| **LLM Inference** | Ollama | Fácil deploy local, API OpenAI-compatível, otimizado para CPU/GPU |
-| **Embeddings** | `bge-m3` | Melhor modelo multilíngue open-source para busca densa e semântica |
+| **LLM Inference** | Ollama (`qwen2.5:0.5b` / `1.5b`) | Deploy local leve, API compatível e ajustado para CPU/4GB RAM (`num_ctx=2048`) |
+| **Embeddings** | FastEmbed INT8 (`MiniLM-L12` / `bge-m3`) | Busca semântica multilíngue eficiente em memória para ambientes de 4GB RAM |
 | **Vector DB** | ChromaDB | Sem dependências de serviços externos, persistência local simples |
 | **STT** | faster-whisper | Inferência de 2 a 4x mais rápida em CPU através do CTranslate2 |
 | **TTS** | Piper | Síntese neural pt-BR offline, ultra-leve e nativamente rápida |

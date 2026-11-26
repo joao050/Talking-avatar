@@ -41,7 +41,8 @@ Validar a execução de LLMs locais com baixo consumo de hardware e refinar o pr
 
 ### Componentes Técnicos
 - **Runtime LLM:** [Ollama](https://ollama.com/)
-  - *Hardware padrão / sem GPU dedicada:* `llama3.2:3b` ou `qwen2.5:3b-instruct-q4_K_M` (respostas rápidas e ótimo português).
+  - *Hardware Ultra-Leve (Dual-Core / 4GB RAM):* `qwen2.5:0.5b` (~400 MB) ou `qwen2.5:1.5b` (~980 MB) com `num_ctx=2048`, `OLLAMA_MAX_LOADED_MODELS=1` e `OLLAMA_KEEP_ALIVE=2m`.
+  - *Hardware padrão / sem GPU dedicada (16GB RAM):* `llama3.2:3b` ou `qwen2.5:3b-instruct-q4_K_M` (respostas rápidas e ótimo português).
   - *Com GPU (VRAM >= 6GB-8GB):* `qwen2.5:7b-instruct-q4_K_M` ou `llama3.1:8b`.
 - **Interface Prototipagem:** Streamlit ou Gradio (chat com streaming ativo via `ollama-python`).
 
@@ -150,5 +151,6 @@ Garantir reprodutibilidade, segurança de dados e conformidade regulatória.
 
 | Cenário de Hardware | LLM Recomendada | Embeddings | Whisper (STT) | TTS |
 | :--- | :--- | :--- | :--- | :--- |
+| **Ultra-Leve (i3 Dual-Core, 4GB RAM)** | `qwen2.5:0.5b` ou `qwen2.5:1.5b` (`num_ctx=2048`) | `paraphrase-multilingual-MiniLM-L12-v2` (FastEmbed INT8) | `faster-whisper` (`tiny` INT8) | `piper` (`pt_BR-edresson-low`) |
 | **Apenas CPU (i5/Ryzen 5, 16GB RAM)** | `qwen2.5:3b-instruct-q4_K_M` | `bge-m3` (FastEmbed / INT8) | `faster-whisper` (`base` ou `tiny`) | `piper` (`pt_BR-edresson-low`) |
 | **Com GPU (6GB a 8GB VRAM - RTX 3060/4060)** | `qwen2.5:7b-instruct-q4_K_M` ou `llama3.2:3b` | `bge-m3` | `faster-whisper` (`small` ou `medium`) | `piper` (`pt_BR-faber-medium`) |

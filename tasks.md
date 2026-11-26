@@ -23,17 +23,17 @@
 ---
 
 ## 1️⃣ Etapa 1: Chatbot Local (LLM & Prompt)
-- [ ] 🔴 **TASK-101**: Instalar e validar Ollama em execução local
-- [ ] 🔴 **TASK-102**: Baixar modelo base (`qwen2.5:3b-instruct` ou `llama3.2:3b`)
-- [ ] 🔴 **TASK-103**: Criar `Modelfile` customizado com a persona do atendente (respostas concisas e tom falado)
-- [ ] 🟡 **TASK-104**: Desenvolver protótipo rápido com Streamlit/Gradio para validar streaming de tokens e latência
+- [x] 🔴 **TASK-101**: Instalar e validar Ollama em execução local (ajustado p/ perfil 4GB RAM)
+- [ ] 🔴 **TASK-102**: Baixar modelo base ultra-leve (`qwen2.5:0.5b` ou `qwen2.5:1.5b`)
+- [ ] 🔴 **TASK-103**: Criar `Modelfile` customizado com a persona do atendente (respostas concisas, `num_ctx=2048` e tom falado)
+- [ ] 🟡 **TASK-104**: Desenvolver protótipo rápido e leve para validar streaming de tokens e latência
 
 ---
 
 ## 2️⃣ Etapa 2: RAG (Base de Conhecimento com PDFs)
 - [ ] 🔴 **TASK-201**: Criar pipeline de ingestão de PDFs em `backend/rag/ingest.py`
 - [ ] 🔴 **TASK-202**: Configurar chunking semântico com `RecursiveCharacterTextSplitter`
-- [ ] 🔴 **TASK-203**: Integrar modelo de embeddings `BAAI/bge-m3` (via FastEmbed ou Ollama)
+- [ ] 🔴 **TASK-203**: Integrar modelo de embeddings leve via FastEmbed INT8 (`paraphrase-multilingual-MiniLM-L12-v2` p/ 4GB RAM)
 - [ ] 🔴 **TASK-204**: Configurar armazenamento persistente com ChromaDB local
 - [ ] 🟡 **TASK-205**: Criar retriever com filtro de score de relevância e fallback amigável quando a informação não constar nos documentos
 - [ ] 🟢 **TASK-206**: Adicionar testes automatizados de perguntas e respostas para os documentos da disciplina
