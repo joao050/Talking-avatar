@@ -161,9 +161,34 @@ def run_smoke_test(base_url: str, model: str) -> bool:
     return True
 
 
+def verify_required_model(base_url: str, model: str, installed_models: list[str]) -> bool:
+    """Verifica se o modelo base obrigatorio esta instalado e exibe seus metadados."""
+    if model not in installed_models:
+        print(f"  [ERRO] Modelo base obrigatorio '{model}' nao encontrado! Execute: ollama pull {model}")
+        return False
+
+    try:
+        info = http_json(f"{base_url}/api/show", payload={"name": model}, timeout=10.0)
+        details = info.get("details", {})
+        params = details.get("parameter_size", "?")
+        quant = details.get("quantization_level", "?")
+        family = details.get("family", "?")
+        print(f"  -> Modelo base validado: {model} (familia={family}, params={params}, quant={quant})")
+    except urllib.error.URLError as exc:
+        print(f"  [ERRO] Nao foi possivel inspecionar metadados de '{model}': {exc}")
+        return False
+
+    return True
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Valida instalacao e execucao local do Ollama.")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL, help="URL base do servidor Ollama.")
+    parser.add_argument(
+        "--require-model",
+        metavar="MODEL",
+        help="Exige que o modelo base informado esteja baixado localmente (ex: qwen2.5:0.5b).",
+    )
     parser.add_argument("--smoke-test", metavar="MODEL", help="Executa inferencia curta no modelo informado.")
     args = parser.parse_args()
 
@@ -196,6 +221,10 @@ def main() -> int:
     models_label = ", ".join(models) if models else "nenhum modelo baixado ainda"
     print(f"[3/4] Servidor HTTP ({args.base_url}): [OK] API v{api_ver.get('version', '?')}")
     print(f"  -> Modelos disponiveis localmente: {models_label}")
+
+    if args.require_model:
+        if not verify_required_model(args.base_url, args.require_model, models):
+            return 1
 
     # 4. Smoke test opcional
     if args.smoke_test:

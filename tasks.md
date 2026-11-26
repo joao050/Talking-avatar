@@ -24,8 +24,8 @@
 
 ## 1️⃣ Etapa 1: Chatbot Local (LLM & Prompt)
 - [x] 🔴 **TASK-101**: Instalar e validar Ollama em execução local (ajustado p/ perfil 4GB RAM)
-- [ ] 🔴 **TASK-102**: Baixar modelo base ultra-leve (`qwen2.5:0.5b` ou `qwen2.5:1.5b`)
-- [ ] 🔴 **TASK-103**: Criar `Modelfile` customizado com a persona do atendente (respostas concisas, `num_ctx=2048` e tom falado)
+- [x] 🔴 **TASK-102**: Baixar e consolidar modelo base ultra-leve (`qwen2.5:0.5b` - Q4_K_M, 397MB)
+- [ ] 🔴 **TASK-103**: Criar `Modelfile` customizado com a persona de amigo/mentor (debate e tomada de decisões, `num_ctx=2048` e tom falado)
 - [ ] 🟡 **TASK-104**: Desenvolver protótipo rápido e leve para validar streaming de tokens e latência
 
 ---
